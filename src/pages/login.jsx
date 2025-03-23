@@ -53,7 +53,7 @@ function Login() {
         <>
 
             <div className="bg-black text-white min-h-screen flex flex-col">
-                <Navbar />
+                {/* <Navbar /> */}
 
                 <form onSubmit={handleSubmit} className="mt-32 w-full max-w-md mx-auto flex flex-col space-y-6 p-6 bg-gray-900 rounded-lg shadow-lg">
                     <label className="flex flex-col font-semibold text-lg">

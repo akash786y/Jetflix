@@ -31,7 +31,7 @@ function Hero(){
 
     return (
         <>
-            <div className="max-w-[1640px] mx-auto flex justify-center">
+            <div className="max-w-[1640px] mx-auto flex justify-center mt-16">
                 <div className="max-h-[800px] relative">
                 <img className="w-full mac-cover object-cover justify-center w-1640 h-[800px]" src={v[imgIndex]} alt="Img" />
                 <button onClick={nextImg} type="button" className="text-white bg-gray px-5 py-2.5 rounded-full absolute top-1/2 left-0 hover:bg-black">

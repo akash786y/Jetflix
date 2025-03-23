@@ -10,7 +10,7 @@ function Card(props) {
     return (
         <>
             {/* <Link to="/page1"> */}
-            <div className="group relative rounded-lg transition-all px-3 py-3 shadow-lg hover:scale-105 duration:300">
+            <div className="group relative rounded-lg transition-all  py-3 shadow-lg hover:scale-105 duration:300">
                 <div className="max-w-sm min-w-60 max-h-64 rounded overflow-hidden mx-2 duration-300">
                     <img className="w-full h-full object-cover group-hover:scale-110 duration:300 transition-transform" src={props.url} alt="Img" />
                     <div className="inset-0 absolute bg-black bg-opacity-60 opacity-0 flex flex-col justify-center items-center text-white group-hover:opacity-100 transition-opacity">

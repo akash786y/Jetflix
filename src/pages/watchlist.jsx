@@ -14,7 +14,7 @@ function Watchlist() {
         <>
             <div className='bg-black min-h-screen'>
                 <Navbar />
-                <h1 className="text-center text-white mt-20 text-4xl font-extrabold tracking-wide py-8">
+                <h1 className="text-center text-white mt-16 text-4xl font-extrabold tracking-wide py-8">
                     Watch List
                 </h1>
                 <div className='px-6'>

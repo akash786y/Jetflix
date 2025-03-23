@@ -7,8 +7,8 @@ import Footer from '../components/Footer'
 function page1() {
 
   const options = {
-    height: '390',
-    width: '640',
+    height: '640',
+    width: '1260',
     playerVars: {
       autoplay: 1,
       controls: 1,
@@ -29,14 +29,15 @@ function page1() {
         </div>
       </div> */}
 
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
-          <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg p-6 mt-24">
-            <h1 className="text-2xl font-semibold text-center text-gray-800 mb-4">
-              Watch This Video
-            </h1>
-            <div className="flex justify-center">
-              <YouTube videoId="-_PpxVu_zhM" opts={options} />
-            </div>
+        <div className="w-full bg-black p-6 mt-18">
+          <h1 className="text-2xl font-semibold text-center text-gray-800 mb-4">
+            Watch This Video
+          </h1>
+          <div className="flex justify-center mt-16">
+            <YouTube width="1260" height="540" videoId="-_PpxVu_zhM" opts={options} />
+            {/* <video controls width="1260" height="540">
+              <source src='src\assets\Car Crash America USA 2017 Full HD.mp4' type='video/mp4' />
+            </video> */}
           </div>
         </div>
 
