@@ -1,8 +1,24 @@
 {
-    "rewrites": [
+    "routes": [
         {
-            "source": "/((?!api/.*).*)",
-            "destination": "/"
+            "src": "/home",
+            "dest": "/"
+        },
+        {
+            "src": "/page1",
+            "dest": "/"
+        },
+        {
+            "src": "/watchlist",
+            "dest": "/"
+        },
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/videoList",
+            "dest": "/"
         }
     ]
 }
