@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import './index.css'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Watchlist from './pages/watchlist'
 import Page1 from './pages/page1'
