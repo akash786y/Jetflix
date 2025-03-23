@@ -1,9 +1,24 @@
 {
     "routes": [
         {
-            "src": "/[^.]+",
-            "dest": "/",
-            "status": 200
+            "src": "/home",
+            "dest": "/"
+        },
+        {
+            "src": "/page1",
+            "dest": "/"
+        },
+        {
+            "src": "/watchlist",
+            "dest": "/"
+        },
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/videoList",
+            "dest": "/"
         }
     ]
 }
