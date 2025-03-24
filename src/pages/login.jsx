@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
 
@@ -16,17 +17,17 @@ function Login() {
     function handleChange(event) {
 
         setFormData({ ...formData, [event.target.name]: event.target.value })
-        setError({ ...error, [event.target.name]:'' })
+        setError({ ...error, [event.target.name]: '' })
     }
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
     }
 
 
     const navigate = useNavigate();
 
-    function handleClick() {
+    async function handleClick() {
         let errorData = {}
         if (formData.name == '') {
             errorData.name = 'Enter Name !!'
@@ -38,15 +39,47 @@ function Login() {
             errorData.password = 'Enter Password !!'
         }
 
+        if (formData.name || formData.email) {
+            try {
+                const response = await axios.post('http://127.0.0.1:3000/api/login', formData);
+                console.log(response);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
         setError(errorData);
 
         console.log(error)
         console.log(formData)
         console.log(errorData)
 
-        if(errorData.name || errorData.email || errorData.password)
+        if (errorData.name || errorData.email || errorData.password)
             return;
         navigate('/home')
+    }
+
+    async function handleSubmitWithoutLogin(){
+        
+        let errorData = {}
+        if (formData.name == '') {
+            errorData.name = 'Please enter name !!'
+        }
+        setError(errorData);
+        if(formData.name === ''){
+            return;
+        }
+        else{
+            try {
+                console.log(formData)
+                const response = await axios.post('http://127.0.0.1:3000/api/login', formData);
+                console.log(response);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        navigate('/home');
     }
 
     return (
@@ -90,9 +123,9 @@ function Login() {
                         Submit
                     </button>
 
-                    <Link to="/home" className="text-red-400 hover:text-red-300 text-center underline">
+                    <button onClick={handleSubmitWithoutLogin} className="text-red-400 hover:text-red-300 text-center underline">
                         Continue without login
-                    </Link>
+                    </button>
                 </form>
             </div>
         </>
