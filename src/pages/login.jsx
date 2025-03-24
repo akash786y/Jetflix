@@ -41,7 +41,7 @@ function Login() {
 
         if (formData.name || formData.email) {
             try {
-                const response = await axios.post('http://127.0.0.1:3000/api/login', formData);
+                const response = await axios.post('https://jetflix-backend.vercel.app/api/login', formData);
                 console.log(response);
             } catch (error) {
                 console.log(error);
@@ -63,7 +63,7 @@ function Login() {
         
         let errorData = {}
         if (formData.name == '') {
-            errorData.name = 'Please enter name !!'
+            errorData.name = 'Please enter any name !!'
         }
         setError(errorData);
         if(formData.name === ''){
@@ -72,7 +72,7 @@ function Login() {
         else{
             try {
                 console.log(formData)
-                const response = await axios.post('http://127.0.0.1:3000/api/login', formData);
+                const response = await axios.post('https://jetflix-backend.vercel.app/api/login', formData);
                 console.log(response);
             } catch (error) {
                 console.log(error);
