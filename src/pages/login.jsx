@@ -41,7 +41,7 @@ function Login() {
 
         if (formData.name || formData.email) {
             try {
-                const response = await axios.post('https://jetflix-backend.vercel.app/api/login', formData);
+                const response = await axios.post('https://jetflixbackend-production.up.railway.app/api/login', formData);
                 console.log(response);
             } catch (error) {
                 console.log(error);
@@ -72,7 +72,7 @@ function Login() {
         else{
             try {
                 console.log(formData)
-                const response = await axios.post('https://jetflix-backend.vercel.app/api/login', formData);
+                const response = await axios.post('https://jetflixbackend-production.up.railway.app/api/login', formData);
                 console.log(response);
             } catch (error) {
                 console.log(error);
