@@ -11,6 +11,7 @@ function Trending() {
     const navRef = useRef();
     const navRef2 = useRef();
     const navRef3 = useRef();
+    const navRef4 = useRef();
 
     const handleNav = (direction, ind) => {
         if (direction === 'left') {
@@ -23,6 +24,9 @@ function Trending() {
             else if (ind == 3) {
                 navRef3 ? (navRef3.current.scrollLeft += 200) : null;
             }
+            else if(ind==4){
+                navRef4 ? (navRef4.current.scrollLeft += 200) : null;
+            }
         }
         else {
             if (ind == 1) {
@@ -33,6 +37,9 @@ function Trending() {
             }
             else if (ind == 3) {
                 navRef3 ? (navRef3.current.scrollLeft -= 200) : null;
+            }
+            else if (ind == 4) {
+                navRef4 ? (navRef4.current.scrollLeft -= 200) : null;
             }
         }
     }
@@ -74,6 +81,15 @@ function Trending() {
             break;
     }
 
+    let horrorCards = []
+    for (let movie of data) {
+        if (movie.genres.includes('horror') || movie.genres.includes('Horror')) {
+            horrorCards.push(<Card url={movie.thumbnail} mName={movie.title} />);
+        }
+        if (horrorCards.length == 8)
+            break;
+    }
+
 
     // let comedyCards = comedyData.map((cardVal) => {
     //     return <Card url={cardVal.url} />
@@ -89,8 +105,9 @@ function Trending() {
             <div className="ml-2">
                 <div className="my-2 relative">
                     <div className="flex justify-between mr-2">
-                        <p className="font-bold text-white text-xl">Adventure</p>
-
+                        <Link to="/videoListAdventure" >
+                            <p className="font-bold text-white text-xl">Adventure</p>
+                        </Link>
                         <Link to="/videoListAdventure" >
                             <p className="text-white text-xl hover:font-bold">View All</p>
                         </Link>
@@ -107,7 +124,9 @@ function Trending() {
                 </div>
                 <div className="my-2 relative">
                     <div className="flex justify-between mr-2">
-                        <p className="font-bold text-white text-xl">Comedy</p>
+                        <Link to="/videoListComedy" >
+                            <p className="font-bold text-white text-xl">Comedy</p>
+                        </Link>
                         <Link to="/videoListComedy" >
                             <p className="text-white text-xl hover:font-bold">View All</p>
                         </Link>
@@ -123,8 +142,10 @@ function Trending() {
                     </button>
                 </div>
                 <div className="my-2 relative">
-                <div className="flex justify-between mr-2">
-                        <p className="font-bold text-white text-xl">Thrill</p>
+                    <div className="flex justify-between mr-2">
+                        <Link to="/videoListThrill" >
+                            <p className="font-bold text-white text-xl">Thrill</p>
+                        </Link>
                         <Link to="/videoListThrill" >
                             <p className="text-white text-xl hover:font-bold">View All</p>
                         </Link>
@@ -136,6 +157,25 @@ function Trending() {
                         {thrillCards}
                     </div>
                     <button onClick={() => handleNav('right', 3)} className="absolute left-0 top-1/2 transform z-40 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition">
+                        <ChevronLeft />
+                    </button>
+                </div>
+                <div className="my-2 relative">
+                    <div className="flex justify-between mr-2">
+                        <Link to="/videoListHorror" >
+                            <p className="font-bold text-white text-xl">Horror</p>
+                        </Link>
+                        <Link to="/videoListHorror" >
+                            <p className="text-white text-xl hover:font-bold">View All</p>
+                        </Link>
+                    </div>
+                    <button onClick={() => handleNav('left', 4)} className="absolute right-0 top-1/2 transform z-40 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition">
+                        <ChevronRight />
+                    </button>
+                    <div className="flex flex-no-wrap overflow-hidden" ref={navRef4}>
+                        {horrorCards}
+                    </div>
+                    <button onClick={() => handleNav('right', 4)} className="absolute left-0 top-1/2 transform z-40 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition">
                         <ChevronLeft />
                     </button>
                 </div>
