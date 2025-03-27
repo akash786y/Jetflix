@@ -89,11 +89,11 @@ function Trending() {
             <div className="ml-2">
                 <div className="my-2 relative">
                     <div className="flex justify-between mr-2">
-                    <p className="font-bold text-white text-xl">Adventure</p>
+                        <p className="font-bold text-white text-xl">Adventure</p>
 
-                    <Link to="/videoList">
-                    <p className="text-white text-xl hover:font-bold">View All</p>
-                    </Link>
+                        <Link to="/videoListAdventure" >
+                            <p className="text-white text-xl hover:font-bold">View All</p>
+                        </Link>
                     </div>
                     <button onClick={() => handleNav('left', 1)} className="absolute right-0 top-1/2 transform z-40 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition">
                         <ChevronRight size={24} />
@@ -106,7 +106,12 @@ function Trending() {
                     </button>
                 </div>
                 <div className="my-2 relative">
-                    <p className="font-bold text-white text-xl">Comedy</p>
+                    <div className="flex justify-between mr-2">
+                        <p className="font-bold text-white text-xl">Comedy</p>
+                        <Link to="/videoListComedy" >
+                            <p className="text-white text-xl hover:font-bold">View All</p>
+                        </Link>
+                    </div>
                     <button onClick={() => handleNav('left', 2)} className="absolute right-0 top-1/2 transform z-40 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition">
                         <ChevronRight />
                     </button>
@@ -118,7 +123,12 @@ function Trending() {
                     </button>
                 </div>
                 <div className="my-2 relative">
-                    <p className="font-bold text-white text-xl">Thrill</p>
+                <div className="flex justify-between mr-2">
+                        <p className="font-bold text-white text-xl">Thrill</p>
+                        <Link to="/videoListThrill" >
+                            <p className="text-white text-xl hover:font-bold">View All</p>
+                        </Link>
+                    </div>
                     <button onClick={() => handleNav('left', 3)} className="absolute right-0 top-1/2 transform z-40 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition">
                         <ChevronRight />
                     </button>

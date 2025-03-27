@@ -7,7 +7,9 @@ import Watchlist from './pages/watchlist'
 import Page1 from './pages/page1'
 import { VideoCartProvider } from './components/VideoCartContext'
 import Login from './pages/login'
-import VideoList from './pages/VideoList'
+import VideoListAdventure from './pages/VideoListAdventure'
+import VideoListComedy from './pages/VideoListComedy'
+import VideoListThril from './pages/VideoListThrill'
 
 function App() {
 
@@ -19,7 +21,9 @@ function App() {
           <Route path='/page1' element={<Page1 />} />
           <Route path='/watchlist' element={<Watchlist />} />
           <Route path='/' element={<Login />} />
-          <Route path='/videoList' element={<VideoList />} />
+          <Route path='/videoListAdventure' element={<VideoListAdventure />} />
+          <Route path='/videoListComedy' element={<VideoListComedy/>}/>
+          <Route path='/videoListThrill' element={<VideoListThril/>}/>
         </Routes>
       </Router>
     </VideoCartProvider>
