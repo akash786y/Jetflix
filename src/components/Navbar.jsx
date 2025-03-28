@@ -25,7 +25,9 @@ function Navbar() {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/home">
                             <a href="">Home</a>
+                            </Link>
                         </li>
                         <li>
                             <a href="">About</a>
